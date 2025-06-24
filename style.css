@@ -1,0 +1,436 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff0f5;
+  color: #4a0b2d;
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+/* Emojis flutuantes topo */
+body::before {
+  content: '💖✨🌸✨💖🌸✨💖';
+  position: fixed;
+  top: -50px;
+  left: -50px;
+  width: 200%;
+  height: 200%;
+  font-size: 5rem;
+  opacity: 0.06;
+  z-index: 0;
+  pointer-events: none;
+  animation: floatEmojis 30s linear infinite;
+  white-space: pre;
+  transform: rotate(-15deg);
+}
+
+/* Emojis flutuantes base */
+body::after {
+  content: '✨💖🌸✨💎🌷✨💫✨';
+  position: fixed;
+  bottom: -100px;
+  right: -80px;
+  width: 300%;
+  height: 300%;
+  font-size: 6rem;
+  opacity: 0.03;
+  z-index: 0;
+  pointer-events: none;
+  animation: floatEmojisReverse 60s linear infinite;
+  white-space: pre;
+  transform: rotate(20deg);
+}
+
+/* Animação emojis topo */
+@keyframes floatEmojis {
+  0% { transform: translate(0, 0) rotate(-15deg); }
+  100% { transform: translate(-100px, 100px) rotate(15deg); }
+}
+
+/* Animação emojis base */
+@keyframes floatEmojisReverse {
+  0% { transform: translate(0, 0) rotate(20deg); }
+  100% { transform: translate(100px, -100px) rotate(-20deg); }
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 3rem 2rem 4rem;
+  background: linear-gradient(135deg, #ffd1dc, #ffe4f0);
+  position: relative;
+  z-index: 2;
+}
+
+.logo-img {
+  width: 140px;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.shine {
+  background: linear-gradient(to right, #ff4081, #ff80ab);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s infinite alternate;
+}
+
+@keyframes shine {
+  0% { opacity: 1; }
+  100% { opacity: 0.8; }
+}
+
+/* Botão destaque */
+.btn-destaque {
+  display: inline-block;
+  margin-top: 1.8rem;
+  padding: 1rem 2rem;
+  background-color: #e91e63;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-radius: 32px;
+  text-decoration: none;
+  box-shadow: 0 6px 15px rgba(233, 30, 99, 0.4);
+  transition: transform 0.2s ease, background 0.3s;
+  position: relative;
+  z-index: 2;
+}
+
+.btn-destaque:hover {
+  transform: scale(1.05);
+  background-color: #c2185b;
+}
+
+/* Seções */
+section {
+  padding: 4rem 2rem;
+  max-width: 960px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #d81b60;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Cards flex */
+.cards {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Card individual */
+.card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(233, 30, 99, 0.15);
+  text-align: center;
+  max-width: 300px;
+  position: relative;
+  z-index: 2;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+/* Lista tópicos */
+.grid-topicos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  color: #6d1d44;
+}
+
+/* Texto alerta */
+.alerta {
+  color: #a30044;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+/* Garantia - caixa */
+.metodo-garantia {
+  background: #fde8f1;
+  border-radius: 22px;
+  max-width: 720px;
+  margin: 0 auto 5rem;
+  padding: 3.5rem 3rem;
+  text-align: center;
+  box-shadow: 0 12px 35px rgba(233, 30, 99, 0.2);
+  color: #a12058;
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  z-index: 2;
+}
+
+.metodo-garantia h2 {
+  font-size: 2.8rem;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  color: #d81b60;
+}
+
+.garantia-texto strong {
+  font-size: 1.7rem;
+  display: block;
+  margin-bottom: 1rem;
+  color: #c2185b;
+}
+
+/* Novo conteúdo email */
+.recebe-email {
+  background-color: #fff0f9;
+  border-radius: 20px;
+  padding: 3.5rem 2rem;
+  margin-bottom: 4rem;
+  box-shadow: 0 10px 30px rgba(233, 30, 99, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+.recebe-email h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #d81b60;
+  text-align: center;
+}
+
+.topicos-recebe li {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #6d1d44;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* Depoimentos com fundo brilhante */
+.depoimentos {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 4rem;
+}
+
+.glitter-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: radial-gradient(#ffc1e3 1px, transparent 1px),
+              radial-gradient(#ffe0f0 1px, transparent 1px);
+  background-position: 0 0, 10px 10px;
+  background-size: 20px 20px;
+  animation: glitter 4s linear infinite;
+  z-index: 0;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+@keyframes glitter {
+  0% { background-position: 0 0, 10px 10px; }
+  100% { background-position: 20px 20px, 30px 30px; }
+}
+
+/* Depoimento individual */
+.depoimento {
+  background: white;
+  padding: 2rem 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(229, 76, 120, 0.18);
+  flex: 1 1 280px;
+  max-width: 320px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.depoimento:hover {
+  box-shadow: 0 14px 45px rgba(229, 76, 120, 0.3);
+}
+
+/* Foto depoimento arredondada */
+.depo-foto {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(233, 30, 99, 0.5);
+  border: 3px solid #e91e63;
+}
+
+/* Texto depoimento */
+.depoimento p {
+  font-size: 1rem;
+  color: #5a344a;
+  line-height: 1.5;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.depoimento span {
+  font-weight: 700;
+  color: #91174a;
+  font-size: 0.95rem;
+}
+
+/* Oferta */
+.oferta {
+  background: linear-gradient(to right, #ffc1e3, #ffdce9);
+  text-align: center;
+  border-radius: 18px;
+  padding: 3rem 2rem;
+  box-shadow: 0 10px 25px rgba(233, 30, 99, 0.15);
+  position: relative;
+  z-index: 2;
+}
+
+.oferta-titulo {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #b0004c;
+}
+
+.oferta-valor {
+  font-size: 2.2rem;
+  color: #d81b60;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.corte {
+  text-decoration: line-through;
+  color: #777;
+}
+
+.urgencia {
+  font-weight: bold;
+  color: #b71c5e;
+  margin-bottom: 1.5rem;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Fade-in animation */
+.fade-in {
+  animation: fade 1.5s ease-in-out forwards;
+  opacity: 0;
+}
+
+@keyframes fade {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.8rem; }
+  .btn-destaque { font-size: 1rem; padding: 0.8rem 1.5rem; }
+  .card, .depoimento { max-width: 100%; }
+  .cards { flex-direction: column; gap: 1.5rem; }
+  .metodo-garantia h2 { font-size: 2rem; }
+  .garantia-texto strong { font-size: 1.4rem; }
+}
+
+/* Polaroid style for images */
+
+.img-polaroid {
+  background: white;
+  padding: 0.8rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  max-width: 280px;
+  position: relative;
+  z-index: 2;
+  transform: rotate(-2deg);
+  transition: transform 0.3s ease, box-shadow 0.3s;
+  margin: 0 auto;
+}
+
+.img-polaroid img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+.img-polaroid:hover {
+  transform: rotate(0deg) scale(1.03);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Layout para as seções com imagens polaroid e texto lado a lado */
+
+.aprende-conteudo,
+.recebe-conteudo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.aprende-conteudo ul,
+.recebe-conteudo ul {
+  flex: 1 1 300px;
+  list-style: none;
+  color: #6d1d44;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding-left: 0;
+}
+
+@media (max-width: 768px) {
+  .aprende-conteudo,
+  .recebe-conteudo {
+    flex-direction: column;
+  }
+}
