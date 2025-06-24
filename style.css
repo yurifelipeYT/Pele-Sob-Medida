@@ -382,7 +382,6 @@ footer {
 }
 
 /* Polaroid style for images */
-
 .img-polaroid {
   background: white;
   padding: 0.8rem;
@@ -408,7 +407,6 @@ footer {
 }
 
 /* Layout para as seções com imagens polaroid e texto lado a lado */
-
 .aprende-conteudo,
 .recebe-conteudo {
   display: flex;
@@ -432,5 +430,78 @@ footer {
   .aprende-conteudo,
   .recebe-conteudo {
     flex-direction: column;
+  }
+}
+
+/* Formulário de Contato */
+.form-contato {
+  background: #fff0f9;
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  max-width: 480px;
+  margin: 3rem auto 4rem;
+  box-shadow: 0 8px 30px rgba(233, 30, 99, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  font-weight: 600;
+  color: #6d1d44;
+  position: relative;
+  z-index: 2;
+}
+
+.form-contato label {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+  display: block;
+  color: #91174a;
+}
+
+.form-contato input[type="email"],
+.form-contato textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: 2px solid #d81b60;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  color: #4a0b2d;
+}
+
+.form-contato input[type="email"]:focus,
+.form-contato textarea:focus {
+  outline: none;
+  border-color: #e91e63;
+  box-shadow: 0 0 8px rgba(233, 30, 99, 0.4);
+}
+
+.form-contato textarea {
+  min-height: 120px;
+  font-weight: 500;
+}
+
+.form-contato .btn-destaque {
+  background-color: #e91e63;
+  font-weight: 700;
+  padding: 1rem 0;
+  font-size: 1.2rem;
+  border-radius: 32px;
+  box-shadow: 0 6px 15px rgba(233, 30, 99, 0.5);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form-contato .btn-destaque:hover {
+  background-color: #c2185b;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* Responsividade para o formulário */
+@media (max-width: 480px) {
+  .form-contato {
+    padding: 2rem 1rem;
+    max-width: 100%;
   }
 }
