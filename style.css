@@ -498,6 +498,34 @@ footer {
   cursor: pointer;
 }
 
+/* --- Botão fixo WhatsApp --- */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 25px;
+  right: 25px;
+  background-color: #25d366;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  background-color: #1ebe57;
+  cursor: pointer;
+}
+
+.whatsapp-float img {
+  width: 35px;
+  height: 35px;
+}
+
+
 /* Responsividade para o formulário */
 @media (max-width: 480px) {
   .form-contato {
